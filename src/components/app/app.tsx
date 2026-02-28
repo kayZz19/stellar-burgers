@@ -78,7 +78,7 @@ function App() {
                   <OrderInfo />
                 </Modal>
               }
-            ></Route>
+            />
           </Route>
           <Route
             path='/feed/:number'
