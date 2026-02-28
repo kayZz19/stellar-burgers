@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <AppHeader />
 
       <Routes location={background || location}>
@@ -70,14 +70,16 @@ function App() {
               </Modal>
             }
           />
-          <Route
-            path='/profile/orders/:number'
-            element={
-              <Modal title='' onClose={handleCloseModal}>
-                <OrderInfo />
-              </Modal>
-            }
-          />
+          <Route path='/profile/orders/:number' element={<ProtectedRoute />}>
+            <Route
+              index
+              element={
+                <Modal title='' onClose={handleCloseModal}>
+                  <OrderInfo />
+                </Modal>
+              }
+            ></Route>
+          </Route>
           <Route
             path='/feed/:number'
             element={
@@ -88,7 +90,7 @@ function App() {
           />
         </Routes>
       )}
-    </>
+    </div>
   );
 }
 
