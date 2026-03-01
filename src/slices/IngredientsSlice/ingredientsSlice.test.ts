@@ -3,7 +3,8 @@ import reducer, {
   removeIngredient,
   moveIngredient,
   getIngredientsThunk,
-  createOrderThunk
+  createOrderThunk,
+  IngredientsState
 } from './ingredientsSlice';
 import { TIngredient, ConstructorState, TOrder } from '@utils-types';
 
@@ -70,7 +71,7 @@ describe('ingredientsSlice', () => {
       error: null
     };
     const state = reducer(
-      initialState as any,
+      initialState as IngredientsState,
       moveIngredient({ index: 0, direction: 'down' })
     );
     expect(state.constructor.ingredients[1]).toEqual(main);
