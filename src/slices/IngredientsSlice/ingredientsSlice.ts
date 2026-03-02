@@ -2,7 +2,7 @@ import { getIngredientsApi, orderBurgerApi, TNewOrderResponse } from '@api';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ConstructorState, TIngredient } from '@utils-types';
 
-interface IngredientsState {
+export interface IngredientsState {
   items: {
     buns: TIngredient[] | [];
     mains: TIngredient[] | [];
